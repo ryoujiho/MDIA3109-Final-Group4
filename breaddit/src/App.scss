@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+@import './pages/main/main.scss';
+@import './pages/Feed/feed.scss';
+@import './pages/CreatPost/createpost.scss';
+@import './pages/Login/login.scss';
+@import './pages/SignUp/signup.scss';
+@import './pages/PostExpand/postexpand.scss';
+@import './pages/SavedList/savedlist.scss';
