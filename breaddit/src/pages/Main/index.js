@@ -11,8 +11,7 @@ import {
 
 
 const Main = () => {
-    return <div>
-        This is main
+    return <div className="main">
         <Topbar/>
         <Post/>
     </div>
