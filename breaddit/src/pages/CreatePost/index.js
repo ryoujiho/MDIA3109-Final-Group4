@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from 'comps/Topbar';
 import {
     BrowserRouter as Router,
     Switch,
@@ -8,8 +9,8 @@ import {
   
 
   const CreatePost = () => {
-    return <div>
-        Creating a post
+    return <div className="pagebody">
+        <Topbar pageName="Create Post"/>
     </div>
   }
 

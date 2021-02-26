@@ -28,6 +28,8 @@ const Back = styled.div`
 
 `;
 
+const PageName = styled.div``;
+
 const Hamburger = styled.div`
     width:auto;
     height:50%;
@@ -51,11 +53,11 @@ const MenuWrapper = styled.div`
     height:100vh;
 `;
 
-const Topbar = () => {
+const Topbar = ({pageName}) => {
     const [openMenu, setOpenMenu] = useState(false);
     return <TopBarWrapper>
             <Back><img src="/Hamburger.png"/></Back>
-            Top Bar
+           <PageName>{pageName}</PageName>
             <Hamburger onClick={()=>{
             setOpenMenu(!openMenu);
             }}>
@@ -70,7 +72,7 @@ const Topbar = () => {
 }
 
 Topbar.defaultProps = {
-
+    pageName:"Page Name"
 
 }
 

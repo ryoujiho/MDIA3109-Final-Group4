@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from 'comps/Topbar';
 import {
     BrowserRouter as Router,
     Switch,
@@ -9,8 +10,8 @@ import {
 
   const PostExpand = () => {
     return <div>
-        Post Expand
-    </div>
+        <Topbar pageName=" "/>
+          </div>
   }
 
   export default PostExpand;
