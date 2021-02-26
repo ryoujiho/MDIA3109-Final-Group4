@@ -1,4 +1,5 @@
 import React from 'react';
+import Topbar from 'comps/Topbar';
 import {
     BrowserRouter as Router,
     Switch,
@@ -8,8 +9,8 @@ import {
   
 
   const SavedList = () => {
-    return <div>
-        Saved list
+    return <div className="pagebody">
+        <Topbar pageName="Saved List"/>
     </div>
   }
 
