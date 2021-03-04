@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const CommWrapper = styled.div`
     display:flex;
-
+    margin-bottom:8px;
 `;
 
 const CommWriter = styled.div`
