@@ -7,15 +7,9 @@ const PostWrapper = styled.div`
     width:90%;
     max-width: 350px;
     height:60%;
-    max-height: 400px;
-    background-color:#E5E5E5;
+    max-height: 450px;
+    background-color:#f8f8f8;
 `;
-
-const PostImgBox = styled.div`
-    width:100%;
-    position:relative;
-    `;
-
 
 const PostImg = styled.div`
     padding:10px;
@@ -27,15 +21,20 @@ const PostImg = styled.div`
     }
 `;
 
+const UserInfo = styled.div`
+    width:90%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
+    `;
+
+
 const WriterPhoto = styled.div`
     width:40px;
     height:40px;
     border-radius:50px;
-    position:absolute;
-    z-index:30;
-    bottom:20px;
-    right:15px;
-    border:4px solid #92BFB1;
+    border:3px solid #92BFB1;
 
     img {
         width:100%;
@@ -44,16 +43,18 @@ const WriterPhoto = styled.div`
         border-radius:50px;
     }
 `;
+const Username = styled.div`
+    font-size:22px;
+    text-align:right;
+    font-weight:bold;
+`;
 
 const PostDetailBox = styled.div`
     width:100%;
     margin: 0px 0px 15px 15px;
 `;
 
-const Username = styled.h5`
-    font-size:22px;
-    margin:0px;
-`;
+
 
 const PostDesc = styled.div`
     font-size:14px;
@@ -70,6 +71,7 @@ const Numbers = styled.div`
     display:flex;
     align-items:center;
     width:auto;
+    margin:8px 0px;
     img {
         width:18px;
         height:100%;
@@ -80,6 +82,7 @@ const Numbers = styled.div`
         margin-right:18px;
         font-size:12px;
     }
+    
 `;
 
 const CommentsBox = styled.div`
@@ -97,27 +100,27 @@ const ViewComm = styled.a`
 
 const Post = ({img, userphoto, username, postdescription, date}) => {
     return <PostWrapper>
-        <PostImgBox>
             <PostImg><img src={img}/></PostImg>
-            <WriterPhoto><img src={userphoto}/></WriterPhoto>
-        </PostImgBox>
-        <PostDetailBox>
-            <Username>{username}</Username>
-            <PostDesc>{postdescription}</PostDesc>
-            <PostCreated>{date}</PostCreated>
-            <Numbers>
-                <img src="Crumble_sample.png"/>
-                <span>Crumbles</span>
-                <img src="saves.png"/>
-                <span>Saves</span>
-            </Numbers>
-            <CommentsBox>
-                <SimpleComment username="Cookiecooking" comment="Comment1"/>
-                <SimpleComment username="Ahri" comment="Comment2"/>
-            </CommentsBox>
+            <PostDetailBox>
+                <UserInfo>
+                    <WriterPhoto><img src={userphoto}/></WriterPhoto>
+                    <Username>{username}</Username>
+                </UserInfo>
+                <PostDesc>{postdescription}</PostDesc>
+                <PostCreated>{date}</PostCreated>
+                <Numbers>
+                    <img src="Crumble_sample.png"/>
+                    <span>Crumbles</span>
+                    <img src="saves.png"/>
+                    <span>Saves</span>
+                </Numbers>
+                <CommentsBox>
+                    <SimpleComment username="Cookiecooking" comment="Comment1"/>
+                    <SimpleComment username="Ahri" comment="Comment2"/>
+                </CommentsBox>
 
-            <ViewComm>View all Comments</ViewComm>
-        </PostDetailBox>
+                <ViewComm>View all Comments</ViewComm>
+            </PostDetailBox>
     </PostWrapper>
 }
 
