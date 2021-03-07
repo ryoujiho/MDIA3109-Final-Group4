@@ -22,8 +22,8 @@ const Userpic = () => {
 }
 
 Userpic.defaultProps = {
-
-
+    width:"111px",
+    height:"111px",
 }
 
 export default Userpic;
