@@ -1,67 +1,56 @@
-import React from 'react';
+import React from "react";
 import styled from 'styled-components';
 
-const CommInputBox = styled.div`
+const DividerContainer = styled.div`
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    width: ${props =>props.width ? props.width : '350px'};
-    height: ${props =>props.height ? props.height : '80px'};
-    background: ${props =>props.bgcolor ? props.bgcolor : '#F8F8F8'};
+    width: 100%;
+    height: 100%;
+    max-height: 30px;
+    margin-left: 40px;
+    max-width: ${props=>props.maxwidth};
+    flex-direction: row;
+    opacity: 0.3;
 `;
 
-const WriterPhoto = styled.div`
-    width:40px;
-    height:40px;
-    border-radius:50px;
-    position: absolute;
-    margin-right: 275px;
-    border:4px solid #92BFB1;
-
-    img {
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        border-radius:50px;
-    }
+const DividerLine = styled.div`
+    border-bottom-width: 1px;
+    border-bottom-color: #E1E1E1;
+    width: 100%;
+    margin-bottom: 6.5px;
+    height: 5px;
 `;
 
-
-const InputBox = styled.div`
-    display: flex;
-    flex-direction: column;
+const MiddleText = styled.p`
+    font-size: 16px;
 `;
 
-
-const InputCont = styled.input`
-    min-height: 42px;
-    min-width: 250px;
-    margin-top: 4px;
-    margin-left: 50px;
-    border-radius: 5px;
-    ::placeholder{
-        font-family: Roboto;
-        font-size: 18px;
-        color: #C4C4C4} ;
-    border:solid 1px #DDD9D9;
+const TextContainer = styled.div`
+    margin-top: 10px;
 `;
 
+const BottomText = styled.p`
+    font-size: 14px;
+    color: #A6A6A6;
+`;
 
-const CommInput = ({placeholder, userphoto}) => {
+const Divider = ({ title, MaxWidth, text }) => {
     return <div>
-    <CommInputBox>
-        <WriterPhoto><img src="UserIcon.png"/></WriterPhoto>
-        <InputBox>
-            <InputCont placeholder={placeholder}/>
-        </InputBox>
-    </CommInputBox>
+        <DividerContainer maxwidth={MaxWidth}>
+            <DividerLine></DividerLine>
+            <MiddleText>{title}</MiddleText>
+            <DividerLine></DividerLine>
+        </DividerContainer>
+        <TextContainer>
+            <BottomText>{text}</BottomText>
+        </TextContainer>
     </div>
 }
 
-CommInput.defaultProps = {
-    placeholder: 'Add a comment'
+Divider.defaultProps = {
+    title: "or",
+    MaxWidth: "100px",
+    text: "Don't have an account? Sign Up!"
 }
 
-export default CommInput;
-
+export default Divider;
