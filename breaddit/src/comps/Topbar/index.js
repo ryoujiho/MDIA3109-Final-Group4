@@ -5,9 +5,8 @@ import SideMenu from 'comps/Sidemenu';
 
 const TopBarWrapper = styled.div`
     width:100%;
-    background-color:#F4AC45; /*just to indicate for now*/
     height:50px;
-    padding:20px 0px 10px 0px;
+    padding:16px 0px 10px 0px;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -19,16 +18,18 @@ const Back = styled.div`
     height:50%;
     diplay:flex;
     align-items:center;
-    margin-right:20px;
-    padding-left:20px;
+    margin-left:20px;
+
     img {
-        width:100%;
+        width:${props=>props.back ? "90%" : "0%"};
         height:auto;
     }
 
 `;
 
-const PageName = styled.div``;
+const PageName = styled.div`
+ //Need style
+`;
 
 const Hamburger = styled.div`
     width:auto;
@@ -53,10 +54,10 @@ const MenuWrapper = styled.div`
     height:100vh;
 `;
 
-const Topbar = ({pageName}) => {
+const Topbar = ({pageName, back}) => {
     const [openMenu, setOpenMenu] = useState(false);
     return <TopBarWrapper>
-            <Back><img src="/back.png"/></Back>
+            <Back back={back}><img src="/back.png"/></Back>
            <PageName>{pageName}</PageName>
             <Hamburger onClick={()=>{
             setOpenMenu(!openMenu);
@@ -66,14 +67,13 @@ const Topbar = ({pageName}) => {
             <MenuWrapper openMenu={openMenu}>
                 <SideMenu onClick={()=>{
             setOpenMenu(!openMenu);
-        }}/>
+        }} />
             </MenuWrapper>
     </TopBarWrapper>
 }
 
 Topbar.defaultProps = {
     pageName:"Page Name"
-
 }
 
 export default Topbar;

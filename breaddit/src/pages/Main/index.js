@@ -12,7 +12,7 @@ import {
 
 const Main = () => {
     return <div className="main">
-        <Topbar/>
+        <Topbar pageName="Home" back={false}/>
         <Post/>
     </div>
 }

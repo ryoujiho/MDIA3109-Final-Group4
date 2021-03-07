@@ -1,4 +1,8 @@
 import React from 'react';
+import Heading1 from 'comps/Headings/Heading1';
+import Input from 'comps/Input';
+import Divider from 'comps/Divider';
+import Button from 'comps/Button';
 import {
     BrowserRouter as Router,
     Switch,
@@ -8,8 +12,14 @@ import {
   
 
   const Login = () => {
-    return <div>
-        Login
+    return <div className="pagebody">
+          <Heading1 />
+          <div className="login_form">
+            <Input />
+            <Input />
+            <Button text="Login" width="90%"/>
+          </div>
+          <Divider />
     </div>
   }
 

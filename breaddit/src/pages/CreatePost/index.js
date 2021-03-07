@@ -3,6 +3,8 @@ import Topbar from 'comps/Topbar';
 import Description from 'comps/Description';
 import Upload from 'comps/Upload';
 import Userpic from 'comps/Profile/Userpic';
+import Heading2 from 'comps/Headings/Heading2';
+import Button from 'comps/Button';
 import {
     BrowserRouter as Router,
     Switch,
@@ -15,8 +17,13 @@ import {
     return <div className="pagebody">
         <Topbar pageName="Create Post"/>
         <Userpic></Userpic>
-        <Upload></Upload>
-        <Description></Description>
+        <div className="postform">
+          <Heading2/>
+          <Upload></Upload>
+          <Heading2/>
+          <Description></Description>
+        </div>
+        <Button text="Post It!" width="82%"/>
     </div>
   }
 
