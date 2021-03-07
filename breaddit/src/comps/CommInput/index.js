@@ -9,6 +9,7 @@ const CommInputBox = styled.div`
     width: ${props =>props.width ? props.width : '350px'};
     height: ${props =>props.height ? props.height : '80px'};
     background: ${props =>props.bgcolor ? props.bgcolor : '#F8F8F8'};
+    width:100%;
 `;
 
 const WriterPhoto = styled.div`
@@ -49,14 +50,12 @@ const InputCont = styled.input`
 
 
 const CommInput = ({placeholder, userphoto}) => {
-    return <div>
-    <CommInputBox>
+    return <CommInputBox>
         <WriterPhoto><img src="UserIcon.png"/></WriterPhoto>
         <InputBox>
             <InputCont placeholder={placeholder}/>
         </InputBox>
     </CommInputBox>
-    </div>
 }
 
 CommInput.defaultProps = {

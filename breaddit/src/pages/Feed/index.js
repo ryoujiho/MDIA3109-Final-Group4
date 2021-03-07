@@ -1,7 +1,7 @@
 import React from 'react';
 import Topbar from 'comps/Topbar';
 import Post from 'comps/Post';
-
+import Userpic from 'comps/Profile/Userpic';
 import Userinfo from 'comps/Profile/Userinfo';
 import {
     BrowserRouter as Router,
@@ -15,7 +15,10 @@ import {
     return <div className="pagebody">
       
         <Topbar pageName="Profile/Feed"/>
-        <Userinfo></Userinfo>
+        <div className="userinfo">
+          <Userpic />
+          <Userinfo />
+        </div>
         <Post/>
         
     </div>

@@ -1,10 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from "react-router-dom";
 
 const SideMenuContainer = styled.div`
     width:200px;
     height:100%;
     background-color:#92BFB1;
+    a, a:visited {
+        text-decoration:none;
+        color:#0b0b09;
+    }
 `;
 
 // User Icon, Username and Date
@@ -54,6 +59,9 @@ const NavContainer = styled.div`
         font-size:16px;
         margin-bottom:35px;
     }
+
+
+
 `;
 
 const Home = styled.div`
@@ -78,34 +86,42 @@ const Sidemenu = ({onClick, username, date,}) => {
 
             <UserIcon></UserIcon>
 
-            <UserInfoWrapper>
-                <Username>{username}Username</Username>
-                <Date>{date}placeholder date</Date>
-            </UserInfoWrapper>
+            <Link to="/feed">
+                <UserInfoWrapper>
+                    <Username>{username}</Username>
+                    <Date>{date}</Date>
+                </UserInfoWrapper>
+            </Link>
 
         </UserInfoContainer>
 
         <NavContainer>
-            <Home>
-                <img src ="homeicon.png"></img>
-                <span>Home</span>
-            </Home>
-            <MyFeed>
-                <img src ="feedicon.png"></img>
-                <span>My Feed</span>    
-            </MyFeed>
-            <MyList>
-                <img src ="bookmark.png"></img>
-                <span>My List</span>
-            </MyList>
+            <Link to='/Main'>
+                <Home onClick={onClick}>
+                    <img src ="homeicon.png"></img>
+                    <span>Home</span>
+                </Home>
+            </Link>
+            <Link to='/Feed'>
+                <MyFeed>
+                    <img src ="feedicon.png"></img>
+                    <span>My Feed</span>    
+                </MyFeed>
+            </Link>
+            <Link to='/SavedList'>
+                <MyList>
+                    <img src ="bookmark.png"></img>
+                    <span>My List</span>
+                </MyList>
+            </Link>
         </NavContainer>
 
     </SideMenuContainer>
 }
 
 Sidemenu.defaultProps = {
-    username:null,
-    date:null,
+    username:"Username",
+    date:"placeholder date",
 
 }
 
