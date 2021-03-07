@@ -56,7 +56,7 @@ const MenuWrapper = styled.div`
 const Topbar = ({pageName}) => {
     const [openMenu, setOpenMenu] = useState(false);
     return <TopBarWrapper>
-            <Back><img src="/Hamburger.png"/></Back>
+            <Back><img src="/back.png"/></Back>
            <PageName>{pageName}</PageName>
             <Hamburger onClick={()=>{
             setOpenMenu(!openMenu);

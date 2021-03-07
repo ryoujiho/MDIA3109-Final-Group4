@@ -96,7 +96,8 @@ const Sidemenu = ({onClick, username, date,}) => {
             </MyFeed>
             <MyList>
                 <img src ="bookmark.png"></img>
-                <span>My List</span></MyList>
+                <span>My List</span>
+            </MyList>
         </NavContainer>
 
     </SideMenuContainer>
