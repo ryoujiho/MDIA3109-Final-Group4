@@ -5,10 +5,10 @@ import SimpleComment from 'comps/SimpleComment';
 
 const PostWrapper = styled.div`
     width:90%;
-    max-width: 350px;
-    height:60%;
-    max-height: 450px;
+    max-width: 750px;
+    max-height: 650px;
     background-color:#f8f8f8;
+    margin-bottom:30px;
 `;
 
 const PostImg = styled.div`
@@ -51,7 +51,7 @@ const Username = styled.div`
 
 const PostDetailBox = styled.div`
     width:100%;
-    margin: 0px 0px 15px 15px;
+    padding: 0px 0px 10px 10px;
 `;
 
 
