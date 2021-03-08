@@ -12,7 +12,6 @@ display: flex;
 align-items: center;
 text-align: center;
 color: #F4AC45;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 const UserSmall = styled.div`
@@ -28,16 +27,16 @@ color: #0B0B09;
 `
 
 
-const Userinfo = () => {
+const Userinfo = ({username,usertime}) => {
     return <div>
-        <UserText>Username</UserText>
-        <UserSmall>Since 22/12/25</UserSmall>
+        <UserText>{username}</UserText>
+        <UserSmall>{usertime}</UserSmall>
     </div>
 }
 
 Userinfo.defaultProps = {
-
-
+    username:"Username",
+    usertime:"Since 22/12/25"
 }
 
 export default Userinfo;

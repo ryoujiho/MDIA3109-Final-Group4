@@ -28,7 +28,14 @@ const Back = styled.div`
 `;
 
 const PageName = styled.div`
- //Need style
+
+font-family: Lato;
+font-style: normal;
+font-weight: bold;
+font-size: 26px;
+text-align: center;
+
+color: #000000;
 `;
 
 const Hamburger = styled.div`
