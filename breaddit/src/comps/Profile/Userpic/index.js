@@ -16,9 +16,11 @@ const UserPicIcon = styled.div`
 `;
 
 const UserUnderline = styled.div`
-    width:98px;
+    width:109px;
     height:0px;
     border: 2px solid #92BFB1;
+    margin-top:18px;
+    margin-bottom:8px;
 `
 
 const Userpic = ({userphoto}) => {
