@@ -13,11 +13,11 @@ import {
 
   const Login = () => {
     return <div className="pagebody">
-          <Heading1 />
+          <Heading1 text="Let's Breaddit!"/>
           <div className="login_form">
             <Input />
             <Input />
-            <Button text="Login" width="90%"/>
+            <Button text="Login" width="100%"/>
           </div>
           <Divider />
     </div>

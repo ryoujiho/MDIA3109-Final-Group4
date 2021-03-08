@@ -13,9 +13,9 @@ const DescriptionBox = styled.textarea`
 `;
 
 const Description = () => {
-    return <div>
-        <DescriptionBox></DescriptionBox>
-    </div>
+    return <DescriptionBox>
+        
+    </DescriptionBox>
 }
 
 Description.defaultProps = {

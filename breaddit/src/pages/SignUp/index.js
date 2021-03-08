@@ -13,11 +13,11 @@ import {
   const SignUp = () => {
     return <div className="pagebody">
         <div className="singup_form">
-          <Heading1 />
+          <Heading1 text="Bread Up"/>
           <Input />
           <Input />
           <Input />
-          <Button text="Sign Up" />
+          <Button text="Sign Up" bgcolor="#92BFB1" width="100%"/>
         </div>
     </div>
   }
