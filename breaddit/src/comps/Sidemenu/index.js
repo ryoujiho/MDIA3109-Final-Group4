@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import {Link} from "react-router-dom";
 
+import Button from "comps/Button";
+
 const SideMenuContainer = styled.div`
     width:200px;
     height:100%;
@@ -67,8 +69,6 @@ const NavContainer = styled.div`
         margin-bottom:35px;
     }
 
-
-
 `;
 
 const Home = styled.div`
@@ -85,6 +85,18 @@ const MyList = styled.div`
     display:flex;
     align-items:center;
 `;
+
+//Buttons (Create a post, Sign Out)
+
+const ButtonContainer = styled.div`
+    margin-top:250px;
+    margin-left:20px;
+`;
+
+const ButtonWrapper = styled.div`
+    margin-bottom:20px;
+`;
+
 
 const Sidemenu = ({onClick, username, date, userphoto}) => {
     return <SideMenuContainer onClick={onClick}>
@@ -122,6 +134,13 @@ const Sidemenu = ({onClick, username, date, userphoto}) => {
                 </MyList>
             </Link>
         </NavContainer>
+
+        <ButtonContainer>
+            <ButtonWrapper>
+                <Button width ="164px" text="Create a post"></Button>
+            </ButtonWrapper>
+                <Button width ="164px" text="Sign Out" bgcolor="black"></Button>
+        </ButtonContainer>
 
     </SideMenuContainer>
 }
