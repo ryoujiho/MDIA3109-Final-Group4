@@ -7,22 +7,20 @@ font-family: Lato;
 font-style: normal;
 font-weight: bold;
 font-size: 36px;
-line-height: 43px;
 text-align: center;
 
 color: #0B0B09;
 
 `
 
-const Heading1 = () => {
+const Heading1 = ({text}) => {
     return <div>
-    <HeadingText>Heading1</HeadingText>
+    <HeadingText>{text}</HeadingText>
     </div>
 }
 
 Heading1.defaultProps = {
-
-
+    text:'Heading1'
 }
 
 export default Heading1;

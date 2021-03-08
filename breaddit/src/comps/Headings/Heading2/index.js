@@ -8,18 +8,16 @@ font-family: Lato;
 font-style: normal;
 font-weight: bold;
 font-size: 24px;
-line-height: 29px;
-
 color: #0B0B09;`
 
-const Heading2 = () => {
+const Heading2 = (text) => {
     return <div>
-        <HeadingSmall>Heading2</HeadingSmall>
+        <HeadingSmall>{text}</HeadingSmall>
     </div>
 }
 
 Heading2.defaultProps = {
-
+    text:'Heading2'
 
 }
 
