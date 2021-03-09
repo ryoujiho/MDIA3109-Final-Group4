@@ -14,11 +14,10 @@ const InputBox = styled.div`
 
 const InputCont = styled.input`
     min-height: 42px;
-    min-width: 350px;
+    min-width: 300px;
     margin-top: 4px;
     border-radius: 5px;
     ::placeholder{
-        font-family: Roboto;
         font-size: 18px;
         color: #C4C4C4} ;
     border:solid 1px #DDD9D9;
