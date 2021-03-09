@@ -18,9 +18,9 @@ import {
         <Topbar pageName="Create Post"/>
         <Userpic></Userpic>
         <div className="postform">
-          <Heading2/>
+          <Heading2 text="Pick a Photo"/>
           <Upload></Upload>
-          <Heading2/>
+          <Heading2 text="Add a Description"/>
           <Description></Description>
         </div>
         <Button text="Post It!" width="82%"/>

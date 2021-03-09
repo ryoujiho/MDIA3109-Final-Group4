@@ -14,7 +14,7 @@ import {
   const Feed = () => {
     return <div className="pagebody">
       
-        <Topbar pageName="Profile/Feed"/>
+        <Topbar pageName="Profile/Feed" back={true} Hamicon="90%"/>
         <div className="userinfo">
           <Userpic />
           <Userinfo />

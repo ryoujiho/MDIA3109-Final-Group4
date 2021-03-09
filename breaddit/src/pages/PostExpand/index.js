@@ -13,7 +13,7 @@ import {
 
   const PostExpand = () => {
     return <div className="post-expand">
-          <Topbar pageName=" "/>
+          <Topbar pageName=" " back={true} Hamicon="90%"/>
           <div className="post-detail">
             <Post />
           </div>

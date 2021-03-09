@@ -3,20 +3,16 @@ import styled from 'styled-components';
 
 
 const HeadingText = styled.div`
-font-family: Lato;
-font-style: normal;
-font-weight: bold;
-font-size: 36px;
-text-align: center;
-
-color: #0B0B09;
+    font-weight:700;
+    font-size: 36px;
+    text-align: center;
+    color: #0B0B09;
+    margin: 15px 0px;
 
 `
 
 const Heading1 = ({text}) => {
-    return <div>
-    <HeadingText>{text}</HeadingText>
-    </div>
+    return <HeadingText>{text}</HeadingText>
 }
 
 Heading1.defaultProps = {
