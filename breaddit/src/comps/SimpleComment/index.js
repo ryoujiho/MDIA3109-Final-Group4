@@ -16,16 +16,16 @@ const CommText = styled.div`
     font-size:12px;
 `;
 
-const SimpleComment = ({username, comment}) => {
+const SimpleComment = ({commenter_name, comment_text}) => {
     return <CommWrapper>
-        <CommWriter>{username}</CommWriter>
-        <CommText>{comment}</CommText>
+        <CommWriter>{commenter_name}</CommWriter>
+        <CommText>{comment_text}</CommText>
     </CommWrapper>
 }
 
 SimpleComment.defaultProps = {
-    username: "Username",
-    comment: " Comment Hi"
+    commenter_name: "Username",
+    comment_text: " Comment Hi"
 }
 
 export default SimpleComment;

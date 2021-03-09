@@ -1,10 +1,20 @@
 .post-expand {
     display:flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     height:100vh;
+    position:relative;
+}
+
+.post-detail {
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 .comment-input {
+    position: fixed;
+    display: inline-block;
     width:100%;
+    bottom:0;
 }

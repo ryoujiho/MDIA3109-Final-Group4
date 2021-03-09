@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
+import {Link} from "react-router-dom";
 
 const DividerContainer = styled.div`
     display: flex;
@@ -21,18 +22,26 @@ const DividerLine = styled.div`
 const MiddleText = styled.div`
     font-size: 16px;
     margin: -5px 15px;
-    color: #0b0b09
+    color: #0B0B09
 `;
 
 const TextContainer = styled.div`
     display:flex;
     justify-content: center;
-    align-items:center
+    align-items:center;
+
+    a, a:visited {
+        text-decoration: none;
+        color: #92BFB1;
+    }
+
 `;
 
 const BottomText = styled.p`
     font-size: 14px;
-    color: #A6A6A6;
+    color: #0B0B09
+
+
 `;
 
 const Divider = ({text }) => {
@@ -43,7 +52,7 @@ const Divider = ({text }) => {
             <DividerLine/>
         </DividerContainer>
         <TextContainer>
-            <BottomText>Don't have an account? <b>Sign Up!</b></BottomText>
+            <BottomText>Don't have an account? <Link to='/SignUp'><b>Sign Up!</b></Link></BottomText>
         </TextContainer>
     </div>
 }

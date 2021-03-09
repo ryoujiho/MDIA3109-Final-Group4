@@ -26,17 +26,17 @@ const Main = () => {
     }, [])
 
     return <div className="main">
-        <Topbar pageName="Home" back={false}/>
-        {allPosts.map(o=>{
-            return <Post
-                img={o.image_url}
-                postdescription={o.description}
-                date={o.created}
-        
-            />
-        })}
+        <Topbar pageName="Home" back={true} Hamicon="90%"/>
+            {allPosts.map(o=>{
+                return <Post
+                    img={o.image_url}
+                    username={o.username}
+                    postdescription={o.description}
+                    date={o.created}
 
-    </div>
+                />
+            })}
+        </div>
 }
 
 export default Main;

@@ -28,14 +28,10 @@ const Back = styled.div`
 `;
 
 const PageName = styled.div`
-
-font-family: Lato;
-font-style: normal;
-font-weight: bold;
-font-size: 26px;
-text-align: center;
-
-color: #000000;
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+    color: #0B0B09;
 `;
 
 const Hamburger = styled.div`
@@ -46,8 +42,8 @@ const Hamburger = styled.div`
     margin-right:20px;
 
     img {
-        width:100%;
         height:auto;
+        width:${props=>props.Hamicon ? "90%" : "0%"};
     }
 
 `;
@@ -61,12 +57,13 @@ const MenuWrapper = styled.div`
     height:100vh;
 `;
 
-const Topbar = ({pageName, back}) => {
+const Topbar = ({pageName, back, Hamicon}) => {
     const [openMenu, setOpenMenu] = useState(false);
+
     return <TopBarWrapper>
             <Back back={back}><img src="/back.png"/></Back>
            <PageName>{pageName}</PageName>
-            <Hamburger onClick={()=>{
+            <Hamburger  Hamicon={Hamicon} onClick={()=>{
             setOpenMenu(!openMenu);
             }}>
             <img src="/Hamburger.png"/></Hamburger>

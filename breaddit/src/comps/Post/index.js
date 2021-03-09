@@ -98,7 +98,7 @@ const ViewComm = styled.a`
     color: #92BFB1;
 `;
 
-const Post = ({img, userphoto, username, postdescription, date}) => {
+const Post = ({img, userphoto, username, postdescription, date, commentor_name, comment_text}) => {
     return <PostWrapper>
             <PostImg><img src={img}/></PostImg>
             <PostDetailBox>
@@ -115,8 +115,8 @@ const Post = ({img, userphoto, username, postdescription, date}) => {
                     <span>Saves</span>
                 </Numbers>
                 <CommentsBox>
-                    <SimpleComment username="Cookiecooking" comment="Comment1"/>
-                    <SimpleComment username="Ahri" comment="Comment2"/>
+                    <SimpleComment commentor_name={commentor_name} comment_text={comment_text}/>
+                    <SimpleComment commentor_name={commentor_name} comment_text={comment_text}/>
                 </CommentsBox>
 
                 <ViewComm>View all Comments</ViewComm>
