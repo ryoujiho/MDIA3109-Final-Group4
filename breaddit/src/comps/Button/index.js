@@ -19,15 +19,14 @@ const ButtonText = styled.p`
     color:${props =>props.textColor ? props.textColor : '#FFFFFF'};
 `;
 
-const Button = ({onClick, disabled, text, textColor, bgcolor, width, height, radius, fontSize}) => {
-    return <ButtonContainer onClick={onClick} disabled={disabled} bgcolor = {bgcolor} height={height} width={width} radius={radius}>
+const Button = ({onClick, text, textColor, bgcolor, width, height, radius, fontSize}) => {
+    return <ButtonContainer onClick={onClick} bgcolor = {bgcolor} height={height} width={width} radius={radius}>
             <ButtonText fontSize={fontSize} textColor = {textColor}>{text}</ButtonText>
         </ButtonContainer>
 }
 
 Button.defaultProps = {
     color: null,
-    disabled: true,
     text: "Button"
 }
 

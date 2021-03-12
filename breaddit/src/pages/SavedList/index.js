@@ -11,7 +11,7 @@ import {
 
   const SavedList = () => {
     return <div className="pagebody">
-        <Topbar pageName="Saved List"/>
+        <Topbar pageName="Saved List" back={true} Hamicon="90%"/>
         <Post/>
     </div>
   }
