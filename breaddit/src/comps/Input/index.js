@@ -6,12 +6,6 @@ const InputBox = styled.div`
     flex-direction: column;
 `;
 
-// const InputLabel = styled.label`
-//     font-family: Roboto;
-//     font-size: 18px;
-//     color: #676767;
-// `;
-
 const InputCont = styled.input`
     min-height: 42px;
     min-width: 300px;
@@ -24,18 +18,18 @@ const InputCont = styled.input`
 `;
 
 
-const Input = ({placeholder}) => {
+const Input = ({placeholder, catchInput, type}) => {
     return <div>
         <InputBox>
-            {/* <InputLabel>{text}</InputLabel> */}
-            <InputCont placeholder={placeholder}/>
+            <InputCont placeholder={placeholder} onChange={catchInput} type={type}/>
         </InputBox>
     </div>
 }
 
 Input.defaultProps = {
     userphoto: "public/UserIcon.png",
-    placeholder: 'Add a comment'
+    placeholder: 'Add a comment',
+    type: "text"
 }
 
 export default Input;

@@ -11,17 +11,34 @@ import {
   } from "react-router-dom";
   
 
-  const PostExpand = () => {
+  const PostExpand = (props) => {
+
+    var post_detail = props.location.state.o;
+    console.log("post_detail : ", post_detail)
+
     return <div className="post-expand">
-          <Topbar pageName=" " back={true} Hamicon="90%"/>
-          <div className="post-detail">
-            <Post />
+              <Topbar pageName=" " back={true} Hamicon="90%"/>
+
+              <div className="post-detail">
+                <Post 
+                  bgColor={false}
+                  img={post_detail.image_url}
+                  username={post_detail.username}
+                  postdescription={post_detail.description}
+                  date={post_detail.created}
+                  
+                  comm_display="none"
+                  />
+                  <Comment bgColor="#fff"/>
+              </div>
+
+
+
+              <div className="comment-input">
+                <CommInput/>
+              </div>
+
           </div>
-          <Comment bgColor="#fff"/>
-          <div className="comment-input">
-            <CommInput/>
-          </div>
-        </div>
   }
 
   export default PostExpand;

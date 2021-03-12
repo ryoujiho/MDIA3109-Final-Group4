@@ -5,8 +5,10 @@ const CommentBox = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
-    height: 80px;
+    width: 90%;
+    height: auto;
+    margin-top:-25px;
+    
 `;
 
 const CommentImgBox = styled.div`
@@ -15,15 +17,15 @@ const CommentImgBox = styled.div`
     justify-content:center;
     align-items:center;
     width:15%;
+    margin-left:5px;
 `;
 
 
 const WriterPhoto = styled.div`
-    width:40px;
-    height:40px;
+    width:35px;
+    height:35px;
     border-radius:50px;
     border:4px solid #92BFB1;
-    margin-left:5px;
     img {
         width:100%;
         height:100%;
@@ -34,15 +36,17 @@ const WriterPhoto = styled.div`
 
 const Username = styled.h5`
     font-size: 14px;
-    margin 0px 10px;
-    width:10%;
+    margin 0px 3px;
+    width:auto;
+    display:flex;
+    justify-content:flex-start
 `;
 
 const CommentInfoWrapper = styled.div`
     width:60%;
     display:flex;
     flex-direction:column;
-    justify-content:center;
+    justify-content:flex-end;
     margin-left:20px;
 `;
 

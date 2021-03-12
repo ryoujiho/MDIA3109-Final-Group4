@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import Post from 'comps/Post';
-import Topbar from 'comps/Topbar';
+import {useHistory} from 'react-router-dom';
 import axios from 'axios';
+import Button from 'comps/Button';
 import {
     BrowserRouter as Router,
     Switch,
@@ -12,30 +12,33 @@ import {
 
 
 const Main = () => {
+    const history = useHistory();
 
-    const [allPosts, setAllPosts] = useState([]);
+    // Check for a token when the page loades -> useEffect
+    // If a token exists redirect them to Home
+    // Otherwise stay
 
-    const HandlePosts = async() => {
-        let resp = await axios.get("/api/posts");
-        setAllPosts(...[resp.data.posts])
-        console.log(allPosts)
-    }
+    const CheckToken = async() => {
+        var token = await sessionStorage.getItem("token");
+        console.log("Token : ", token)
+        if(token) {
+          axios.defaults.headers.common['Authorization'] = token;
+          history.push("/Home");
+        }
+      }
 
     useEffect(()=> {
-        HandlePosts()
+       //when the page loads do this  
+       CheckToken();
     }, [])
 
     return <div className="main">
-        <Topbar pageName="Home" back={true} Hamicon="90%"/>
-            {allPosts.map(o=>{
-                return <Post
-                    img={o.image_url}
-                    username={o.username}
-                    postdescription={o.description}
-                    date={o.created}
+        <Button onClick={()=>history.push("/Login")} text="Login"/>
+        <Button onClick={()=>history.push("/SignUp")} text="Sign Up"/>
+        {/* <Topbar pageName=" " back={true} Hamicon="90%"/> */}
 
-                />
-            })}
+         
+
         </div>
 }
 

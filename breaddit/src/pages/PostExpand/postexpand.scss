@@ -11,9 +11,10 @@
     display:flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 .comment-input {
-    position: fixed;
+    position: absolute;
     display: inline-block;
     width:100%;
     bottom:0;

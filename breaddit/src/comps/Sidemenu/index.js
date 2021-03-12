@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Link} from "react-router-dom";
-
+import {useHistory} from 'react-router-dom';
 import Button from "comps/Button";
+
 
 const SideMenuContainer = styled.div`
     width:200px;
@@ -99,6 +100,7 @@ const ButtonWrapper = styled.div`
 
 
 const Sidemenu = ({onClick, username, date, userphoto}) => {
+    const history = useHistory();
     return <SideMenuContainer onClick={onClick}>
 
         <UserInfoContainer>
@@ -137,7 +139,9 @@ const Sidemenu = ({onClick, username, date, userphoto}) => {
 
         <ButtonContainer>
             <ButtonWrapper>
-                <Button width ="164px" text="Create a post"></Button>
+                <Button width ="164px" text="Create a post" onClick={()=> {
+                    history.push("/CreatePost");
+                }}></Button>
             </ButtonWrapper>
                 <Button width ="164px" text="Sign Out" bgcolor="black"></Button>
         </ButtonContainer>
