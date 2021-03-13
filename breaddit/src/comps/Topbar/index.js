@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import SideMenu from 'comps/Sidemenu';
+import axios from 'axios';
 
 
 const TopBarWrapper = styled.div`
@@ -59,6 +60,21 @@ const MenuWrapper = styled.div`
 
 const Topbar = ({pageName, back, Hamicon}) => {
     const [openMenu, setOpenMenu] = useState(false);
+    const [user, setUser] = useState("");
+
+    const CheckToken = async () => {
+        const resp = await axios.post("/api/verify");
+        console.log(resp.data);
+        if(resp.data !== "no token sent to server" || "Invalid Token") {
+            setUser(resp.data)
+        }
+    }
+
+    useEffect(()=> {
+        CheckToken();
+    }, [])
+
+    console.log("user!", user.username)
 
     return <TopBarWrapper>
             <Back back={back}><img src="/back.png"/></Back>
@@ -69,8 +85,10 @@ const Topbar = ({pageName, back, Hamicon}) => {
             <img src="/Hamburger.png"/></Hamburger>
             
             <MenuWrapper openMenu={openMenu}>
-                <SideMenu onClick={()=>{
-            setOpenMenu(!openMenu);
+                <SideMenu 
+                username={user.username}
+                onClick={()=>{
+                setOpenMenu(!openMenu);
         }} />
             </MenuWrapper>
     </TopBarWrapper>

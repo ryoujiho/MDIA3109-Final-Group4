@@ -117,7 +117,7 @@ const Sidemenu = ({onClick, username, date, userphoto}) => {
         </UserInfoContainer>
 
         <NavContainer>
-            <Link to='/Main'>
+            <Link to='/Home'>
                 <Home onClick={onClick}>
                     <img src ="homeicon.png"></img>
                     <span>Home</span>
