@@ -31,17 +31,21 @@ import {
     // and store in the axios the token and redirect to login page
     
     return <div className="pagebody">
-      <TopBar back="90%" pageName=" "/>
-        <div className="singup_form">
+      <TopBar back="90%" pageName=""/>
+          <div className="logo">
           <Heading1 text="Bread Up!"/>
-          <Input type="text" catchInput={(e) => 
+          </div>
+          <div className="signup_form">
+          <Input type="text" placeholder="Username" catchInput={(e) => 
                 setUsername(e.target.value)}/>
-          <Input type="password" catchInput={(e) => 
+          <Input type="password" placeholder="Password" catchInput={(e) => 
                 setPass(e.target.value)}/>
+      
           {/* <Input /> */}
           <Button text="Sign Up" bgcolor="#92BFB1" width="100%" onClick={(HandleSignUp)}/>
+          </div>
         </div>
-    </div>
+
   }
 
   export default SignUp;
