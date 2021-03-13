@@ -28,6 +28,7 @@ const Home = () => {
         console.log(resp.data)
     }
 
+
     useEffect(()=> {
         HandlePosts()
     }, [])
@@ -38,6 +39,7 @@ const Home = () => {
                 {allPosts.map(o=>{
                     return <Post
                             img={o.image_url}
+                            userphoto={o.profile_photo}
                             username={o.username}
                             postdescription={o.description}
                             date={o.created}

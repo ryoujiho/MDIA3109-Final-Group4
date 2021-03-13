@@ -60,8 +60,9 @@ import {
           password:pass
         });
         if (resp.data !== "Something went wrong") {
-          const token = resp.data.accessToken
+          const token = resp.data
           sessionStorage.setItem("token", token);
+          console.log(resp.data);
           axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
           history.push("/Home")
         }
