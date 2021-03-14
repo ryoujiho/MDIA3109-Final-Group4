@@ -45,7 +45,6 @@ import {
           <Button text="Sign Up" bgcolor="#92BFB1" width="100%" onClick={(HandleSignUp)}/>
           </div>
         </div>
-
   }
 
   export default SignUp;
