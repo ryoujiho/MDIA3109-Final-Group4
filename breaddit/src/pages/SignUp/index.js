@@ -42,4 +42,5 @@ import {
           </div>
         </div>
   }
+  
   export default SignUp;
