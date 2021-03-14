@@ -23,7 +23,6 @@ import {
       const resp = await axios.post('/api/users', {username:username, password:pass});
       console.log(resp);
       history.push("/Login")
-
     }
 
     // Use an axios call to check to the server to create a username and password
