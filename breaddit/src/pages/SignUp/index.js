@@ -12,7 +12,6 @@ import {
     Link
   } from "react-router-dom";
   
-
   const SignUp = () => {
     const history = useHistory();
     
@@ -39,8 +38,7 @@ import {
                 setUsername(e.target.value)}/>
           <Input type="password" placeholder="Password" catchInput={(e) => 
                 setPass(e.target.value)}/>
-      
-          {/* <Input /> */}
+
           <Button text="Sign Up" bgcolor="#92BFB1" width="100%" onClick={(HandleSignUp)}/>
           </div>
         </div>
