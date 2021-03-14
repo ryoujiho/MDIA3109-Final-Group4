@@ -23,7 +23,6 @@ import {
       console.log(resp);
       history.push("/Login")
     }
-
     // Use an axios call to check to the server to create a username and password
     // if created, a token will get sent over
     // and store in the axios the token and redirect to login page
@@ -43,5 +42,4 @@ import {
           </div>
         </div>
   }
-
   export default SignUp;
