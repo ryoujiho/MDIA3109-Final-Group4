@@ -32,6 +32,7 @@ import {
     
     return <div className="pagebody">
       <TopBar back="90%" pageName=" "/>
+      <div className="logo"></div>
         <div className="singup_form">
           <Heading1 text="Bread Up!"/>
           <Input type="text" catchInput={(e) => 
@@ -43,5 +44,6 @@ import {
         </div>
     </div>
   }
+
 
   export default SignUp;

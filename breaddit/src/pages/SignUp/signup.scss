@@ -1,6 +1,21 @@
-.singup_form {
+.signup_form {
+    height:60%;
+    max-height:550px;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top:20px;
+
+    Input{
+        margin-bottom:15px;
+    }
+
+    Button{
+        margin-top:15px;
+    }
+}
+
+.logo{
+    margin-top:100px;
 }
