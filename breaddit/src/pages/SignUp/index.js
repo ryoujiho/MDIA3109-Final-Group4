@@ -31,7 +31,9 @@ import {
     // and store in the axios the token and redirect to login page
     
     return <div className="pagebody">
-      <TopBar back="90%" pageName=" "/>
+      <TopBar back="90%" pageName=" " onClick={()=>{
+                  history.push("/Login")
+      }}/>
       <div className="logo"></div>
         <div className="singup_form">
           <Heading1 text="Bread Up!"/>

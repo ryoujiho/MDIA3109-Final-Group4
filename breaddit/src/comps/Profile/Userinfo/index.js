@@ -36,7 +36,7 @@ const Userinfo = ({username,usertime}) => {
 
 Userinfo.defaultProps = {
     username:"Username",
-    usertime:"Since 22/12/25"
+    usertime:"22/12/25"
 }
 
 export default Userinfo;

@@ -45,7 +45,7 @@ const Home = () => {
                             date={o.created}
                             comm_display={true}
                         />
-                         })}
+                })}
             </div>
         </div>
 }

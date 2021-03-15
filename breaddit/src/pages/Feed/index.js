@@ -15,6 +15,15 @@ import {
   const Feed = () => {
 
     const [user, setUser] = useState("");
+    const [myposts, setMyposts] = useState([]);
+
+    const HandleMyPosts = async() => {
+        let resp = await axios.get("/api/mypost");
+        setMyposts(...[resp.data.id])
+        console.log("response :", resp)
+        console.log(resp.data)
+    }
+
 
     const CheckToken = async () => {
       const resp = await axios.post("/api/verify");
@@ -25,6 +34,7 @@ import {
   }
 
   useEffect(()=> {
+      HandleMyPosts()
       CheckToken();
   }, [])
 
@@ -33,9 +43,20 @@ import {
         <Topbar pageName="Profile/Feed" back={true} Hamicon="90%"/>
         <div className="userinfo">
           <Userpic />
-          <Userinfo username={user.username}/>
+          <Userinfo username={user.username} usertime={user.created}/>
         </div>
-        <Post/>
+        <div className="post_list">
+            {myposts && myposts.map(o=>{
+              return <Post
+                      img={o.image_url}
+                      userphoto={o.profile_photo}
+                      username={o.username}
+                      postdescription={o.description}
+                      date={o.created}
+                      comm_display={true}
+                  />
+            })}
+        </div>
         
     </div>
   }

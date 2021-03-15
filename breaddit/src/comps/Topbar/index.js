@@ -58,7 +58,7 @@ const MenuWrapper = styled.div`
     height:100vh;
 `;
 
-const Topbar = ({pageName, back, Hamicon}) => {
+const Topbar = ({pageName, back, Hamicon, onClick}) => {
     const [openMenu, setOpenMenu] = useState(false);
     const [user, setUser] = useState("");
 
@@ -77,7 +77,7 @@ const Topbar = ({pageName, back, Hamicon}) => {
     console.log("user!", user.username)
 
     return <TopBarWrapper>
-            <Back back={back}><img src="/back.png"/></Back>
+            <Back back={back} onClick={onClick}><img src="/back.png"/></Back>
            <PageName>{pageName}</PageName>
             <Hamburger  Hamicon={Hamicon} onClick={()=>{
             setOpenMenu(!openMenu);
