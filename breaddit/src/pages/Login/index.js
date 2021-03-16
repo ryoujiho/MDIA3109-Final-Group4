@@ -11,9 +11,6 @@ import {
     Route,
     Link
   } from "react-router-dom";
-  
-// let token = null;
-
 
   const Login = () => {
 
@@ -30,12 +27,6 @@ import {
     const [error, setError] = useState(null);
     const history = useHistory();
 
-    /*
-     Check for a token when the page loades 
-     If a token exists redirect them to Home
-     Otherwise it stays
-    */
-
     const CheckToken = async() => {
         var token = await sessionStorage.getItem("token");
         console.log("Token : ", token)
@@ -44,15 +35,6 @@ import {
           history.push("/Home");
         }
       }
-
-    const CheckStorage = async() => {
-      var token = await sessionStorage.getItem("token");
-      if(token) {
-        axios.defaults.headers.common['Authorization'] = `bearer ${token}`;
-        var resp = await axios.get("/api/verify");
-        console.log("verification", resp.data);
-      }
-    }
 
     const Auth = async () => {
         var resp = await axios.post("/api/users/login" , {
@@ -66,16 +48,8 @@ import {
           axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
           history.push("/Home")
         }
-        // else what
     }
 
-    const Restricted = async() => {
-      var resp2 = await axios.post("/api/verify" ,{
-        What:"Testttt"
-      })
-
-      console.log("Restricted : ", resp2.data)
-    } 
     useEffect(()=> {
       CheckToken();
     }, [])

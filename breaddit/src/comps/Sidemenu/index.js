@@ -47,10 +47,10 @@ const Username = styled.div`
     font-size:18px;
 `;
 
-const Date = styled.div`
-    color:#F4AC45;
-    font-size:14px;
-`;
+// const Date = styled.div`
+//     color:#F4AC45;
+//     font-size:14px;
+// `;
 
 // Nav Items (Home, MyFeed, MyList)
 const NavContainer = styled.div`
@@ -72,20 +72,11 @@ const NavContainer = styled.div`
 
 `;
 
-const Home = styled.div`
+const NavList = styled.div`
     display:flex;
     align-items:center;
 `;
 
-const MyFeed = styled.div`
-    display:flex;
-    align-items:center;  
-`;
-
-const MyList = styled.div`
-    display:flex;
-    align-items:center;
-`;
 
 //Buttons (Create a post, Sign Out)
 
@@ -104,46 +95,41 @@ const Sidemenu = ({onClick, username, date, userphoto}) => {
     return <SideMenuContainer onClick={onClick}>
 
         <UserInfoContainer>
-
             <UserIcon><img src={userphoto}/></UserIcon>
-
-            <Link to="/feed">
                 <UserInfoWrapper>
                     <Username>{username}</Username>
-                    <Date>{date}</Date>
+                    {/* <Date>{date}</Date> */}
                 </UserInfoWrapper>
-            </Link>
-
         </UserInfoContainer>
 
         <NavContainer>
-            <Link to='/Home'>
-                <Home onClick={onClick}>
+                <NavList onClick={()=>{
+                        history.push("/Home")
+                }}>
                     <img src ="homeicon.png"></img>
                     <span>Home</span>
-                </Home>
-            </Link>
-            <Link to='/Feed'>
-                <MyFeed>
+                </NavList>
+                <NavList onClick={()=>{
+                        history.push("/Feed")
+                }}>
                     <img src ="feedicon.png"></img>
                     <span>My Feed</span>    
-                </MyFeed>
-            </Link>
-            <Link to='/SavedList'>
-                <MyList>
+                </NavList>
+                <NavList onClick={()=>{
+                        history.push("/SavedList")
+                }}>
                     <img src ="bookmark.png"></img>
                     <span>My List</span>
-                </MyList>
-            </Link>
+                </NavList>
         </NavContainer>
 
         <ButtonContainer>
             <ButtonWrapper>
-                <Button width ="164px" text="Create a post" onClick={()=> {
+                <Button width ="90%" text="Create a post" onClick={()=> {
                     history.push("/CreatePost");
                 }}></Button>
             </ButtonWrapper>
-                <Button width ="164px" text="Sign Out" bgcolor="black"></Button>
+                <Button width ="90%" text="Sign Out" bgcolor="black"></Button>
         </ButtonContainer>
 
     </SideMenuContainer>
