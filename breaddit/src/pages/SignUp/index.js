@@ -35,6 +35,10 @@ import {
       <div className="logo">
       <Heading1 text="Bread Up!"/>
       </div>
+      <TopBar back="90%" pageName=" " onClick={()=>{
+                  history.push("/Login")
+      }}/>
+      <div className="logo"></div>
         <div className="singup_form">
           
           <Input placeholder="Username" type="text" catchInput={(e) => 

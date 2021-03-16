@@ -9,11 +9,13 @@ const DescriptionBox = styled.textarea`
     border-radius:4px;
     border: 1px solid white;
     outline:none;
-    resize:none;
+    margin-bottom:15px;
 `;
 
-const Description = () => {
-    return <DescriptionBox>
+const Description = ({onChange}) => {
+    return <DescriptionBox 
+            type="text" 
+            onChange={onChange}>
         
     </DescriptionBox>
 }
