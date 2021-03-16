@@ -32,12 +32,14 @@ import {
     
     return <div className="pagebody">
       <TopBar back="90%" pageName=" "/>
-      <div className="logo"></div>
+      <div className="logo">
+      <Heading1 text="Bread Up!"/>
+      </div>
         <div className="singup_form">
-          <Heading1 text="Bread Up!"/>
-          <Input type="text" catchInput={(e) => 
+          
+          <Input placeholder="Username" type="text" catchInput={(e) => 
                 setUsername(e.target.value)}/>
-          <Input type="password" catchInput={(e) => 
+          <Input placeholder="Password" type="password" catchInput={(e) => 
                 setPass(e.target.value)}/>
           {/* <Input /> */}
           <Button text="Sign Up" bgcolor="#92BFB1" width="100%" onClick={(HandleSignUp)}/>
