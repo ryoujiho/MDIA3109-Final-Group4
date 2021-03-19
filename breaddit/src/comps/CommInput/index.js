@@ -48,13 +48,19 @@ const InputCont = styled.input`
     border:solid 1px #DDD9D9;
 `;
 
+const Commbtn = styled.button`
 
-const CommInput = ({placeholder, userphoto}) => {
+`;
+
+
+
+const CommInput = ({placeholder, userphoto, onChange, onClick}) => {
     return <CommInputBox>
         <WriterPhoto><img src="UserIcon.png"/></WriterPhoto>
         <InputBox>
-            <InputCont placeholder={placeholder}/>
+            <InputCont placeholder={placeholder} onChange={onChange}/>
         </InputBox>
+        <Commbtn onClick={onClick}>comment</Commbtn>
     </CommInputBox>
 }
 
