@@ -85,21 +85,15 @@ const Numbers = styled.div`
     
 `;
 
-const CommentsBox = styled.div`
-    display: ${props =>props.comm_display ? props.comm_display : 'none'};
-    flex-direction:column;
-    margin:3px 0px;
-`;
-
-
-const ViewComm = styled.a`
-    display: ${props =>props.comm_display ? props.comm_display : 'none'};
+const ViewComm = styled.span`
+    display: ${props =>props.display ? props.display : 'none'};
     font-size:11px;
     font-weight:bold;
     color: #92BFB1;
+    
 `;
 
-const Post = ({bgColor, img, userphoto, username, postdescription, date, comm_display, commentor_name, comment_text}) => {
+const Post = ({bgColor, img, userphoto, username, postdescription, date, commentor_name, comment_text, display}) => {
     return <PostWrapper bgColor={bgColor}>
             <PostImg><img src={img}/></PostImg>
             <PostDetailBox>
@@ -112,15 +106,8 @@ const Post = ({bgColor, img, userphoto, username, postdescription, date, comm_di
                 <Numbers>
                     <img src="Crumble_sample.png"/>
                     <span>Crumbles</span>
-                    <img src="saves.png"/>
-                    <span>Saves</span>
                 </Numbers>
-                <CommentsBox comm_display={comm_display}>
-                    <SimpleComment commentor_name={commentor_name} comment_text={comment_text}/>
-                    <SimpleComment commentor_name={commentor_name} comment_text={comment_text}/>
-                </CommentsBox>
-
-                <ViewComm>View all Comments</ViewComm>
+                <ViewComm display={display}>View all Comments</ViewComm>
             </PostDetailBox>
     </PostWrapper>
 }
