@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import SideMenu from 'comps/Sidemenu';
 import axios from 'axios';
+import {useHistory} from 'react-router-dom';
 
 
 const TopBarWrapper = styled.div`
@@ -69,6 +70,12 @@ const Topbar = ({pageName, back, Hamicon, onClick}) => {
             setUser(resp.data)
         }
     }
+    
+    const history = useHistory()
+    
+    const goBack = () => {
+        history.goBack()
+      }
 
     useEffect(()=> {
         CheckToken();
@@ -77,7 +84,7 @@ const Topbar = ({pageName, back, Hamicon, onClick}) => {
     console.log("user!", user.username)
 
     return <TopBarWrapper>
-            <Back back={back} onClick={onClick}><img src="/back.png"/></Back>
+            <Back back={back} onClick={goBack}><img src="/back.png"/></Back>
            <PageName>{pageName}</PageName>
             <Hamburger  Hamicon={Hamicon} onClick={()=>{
             setOpenMenu(!openMenu);
@@ -95,7 +102,7 @@ const Topbar = ({pageName, back, Hamicon, onClick}) => {
 }
 
 Topbar.defaultProps = {
-    pageName:"Page Name"
+    pageName:"Page Name",
 }
 
 export default Topbar;
