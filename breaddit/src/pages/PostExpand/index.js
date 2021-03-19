@@ -52,6 +52,7 @@ import {Link, useLocation} from 'react-router-dom';
                     {comments && comments.map(o=> {
                       return  <Comment 
                               bgColor="#fff" 
+                              writerphoto={o.profile_photo}
                               username={o.username}
                               commentdescription={o.comment_text}
                               />
