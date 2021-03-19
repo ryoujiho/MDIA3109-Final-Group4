@@ -115,12 +115,12 @@ const Sidemenu = ({onClick, username, date, userphoto}) => {
                     <img src ="feedicon.png"></img>
                     <span>My Feed</span>    
                 </NavList>
-                <NavList onClick={()=>{
+                {/* <NavList onClick={()=>{
                         history.push("/SavedList")
                 }}>
                     <img src ="bookmark.png"></img>
                     <span>My List</span>
-                </NavList>
+                </NavList> */}
         </NavContainer>
 
         <ButtonContainer>

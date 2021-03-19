@@ -7,8 +7,6 @@ const CommentBox = styled.div`
     align-items: center;
     width: 90%;
     height: auto;
-    margin-top:-25px;
-    
 `;
 
 const CommentImgBox = styled.div`
@@ -62,10 +60,10 @@ const CommentDate = styled.div`
 `;
 
 
-const Comment = ({username, commentdescription, date, bgColor}) => {
+const Comment = ({writerphoto, username, commentdescription, date, bgColor}) => {
     return <CommentBox bgColor={bgColor}>
             <CommentImgBox>
-                <WriterPhoto><img src="UserIcon.png"/></WriterPhoto>
+                <WriterPhoto><img src={writerphoto}/></WriterPhoto>
             </CommentImgBox>
             <Username>{username}</Username>
             <CommentInfoWrapper>
@@ -77,6 +75,7 @@ const Comment = ({username, commentdescription, date, bgColor}) => {
 
 
 Comment.defaultProps = {
+    writerphoto: "UserIcon.png",
     username: "Username",
     commentdescription: "Comment",
     date: "2/15/2021 4:53 PM"
