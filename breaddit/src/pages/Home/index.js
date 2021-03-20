@@ -16,8 +16,9 @@ const Home = () => {
 
     const HandlePosts = async() => {
         let resp = await axios.get("/api/posts");
-        setAllPosts(...[resp.data.posts])
-        console.log("Response data", resp.data)
+        const home_post = resp.data.posts;
+        setAllPosts(...[home_post])
+        console.log("Response data post", home_post)
     }
 
     useEffect(()=> {

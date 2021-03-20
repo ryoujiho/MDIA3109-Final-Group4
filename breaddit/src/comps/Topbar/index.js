@@ -81,7 +81,7 @@ const Topbar = ({pageName, back, Hamicon, onClick}) => {
         CheckToken();
     }, [])
 
-    console.log("user!", user.username)
+    console.log("Current user is : ", user.username)
 
     return <TopBarWrapper>
             <Back back={back} onClick={goBack}><img src="/back.png"/></Back>
@@ -94,6 +94,7 @@ const Topbar = ({pageName, back, Hamicon, onClick}) => {
             <MenuWrapper openMenu={openMenu}>
                 <SideMenu 
                 username={user.username}
+                userphoto={user.profile_photo}
                 onClick={()=>{
                 setOpenMenu(!openMenu);
         }} />
