@@ -7,6 +7,7 @@ const CommentBox = styled.div`
     align-items: center;
     width: 90%;
     height: auto;
+    margin-bottom:5px;
 `;
 
 const CommentImgBox = styled.div`

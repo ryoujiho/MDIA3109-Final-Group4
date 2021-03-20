@@ -40,7 +40,7 @@ const Feed = () => {
 return <div className="pagebody">
         <Topbar pageName="My Feed" back={true} Hamicon="90%"/>
         <div className="userinfo">
-          <Userpic />
+          <Userpic userphoto={user.profile_photo}/>
           <Userinfo username={user.username} usertime={user.created}/>
         </div>
         <div className="post_list">

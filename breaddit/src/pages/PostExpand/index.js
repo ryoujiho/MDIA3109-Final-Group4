@@ -55,6 +55,7 @@ import {Link, useLocation} from 'react-router-dom';
                               writerphoto={o.profile_photo}
                               username={o.username}
                               commentdescription={o.comment_text}
+                              date={o.created}
                               />
                               })} 
                   </div>
