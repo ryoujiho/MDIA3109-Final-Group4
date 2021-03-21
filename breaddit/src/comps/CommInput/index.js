@@ -56,7 +56,7 @@ const Commbtn = styled.button`
 
 const CommInput = ({placeholder, userphoto, onChange, onClick}) => {
     return <CommInputBox>
-        <WriterPhoto><img src="UserIcon.png"/></WriterPhoto>
+        <WriterPhoto><img src={userphoto}/></WriterPhoto>
         <InputBox>
             <InputCont placeholder={placeholder} onChange={onChange}/>
         </InputBox>
