@@ -19,7 +19,7 @@ const SideMenuContainer = styled.div`
 const UserInfoContainer = styled.div`
     display:flex;
     align-items:center;
-    margin-left:10px;
+    justify-content:center;
 `;
 
 const UserInfoWrapper = styled.div`
@@ -47,11 +47,6 @@ const Username = styled.div`
     font-size:18px;
 `;
 
-// const Date = styled.div`
-//     color:#F4AC45;
-//     font-size:14px;
-// `;
-
 // Nav Items (Home, MyFeed, MyList)
 const NavContainer = styled.div`
     margin-top:90px;
@@ -69,14 +64,12 @@ const NavContainer = styled.div`
         font-size:16px;
         margin-bottom:35px;
     }
-
 `;
 
 const NavList = styled.div`
     display:flex;
     align-items:center;
 `;
-
 
 //Buttons (Create a post, Sign Out)
 
@@ -115,23 +108,17 @@ const Sidemenu = ({onClick, username, date, userphoto}) => {
                     <img src ="feedicon.png"></img>
                     <span>My Feed</span>    
                 </NavList>
-                {/* <NavList onClick={()=>{
-                        history.push("/SavedList")
-                }}>
-                    <img src ="bookmark.png"></img>
-                    <span>My List</span>
-                </NavList> */}
         </NavContainer>
 
         <ButtonContainer>
             <ButtonWrapper>
                 <Button width ="90%" text="Create a post" onClick={()=> {
                     history.push("/CreatePost");
-                }}></Button>
+                }} />
             </ButtonWrapper>
-                <Button width ="90%" text="Sign Out" bgcolor="black"></Button>
+                <Button width ="90%" text="Sign Out" bgcolor="black" />
         </ButtonContainer>
-
+        
     </SideMenuContainer>
 }
 

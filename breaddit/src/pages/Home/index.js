@@ -9,7 +9,6 @@ import {
     Link
   } from "react-router-dom";
 
-
 const Home = () => {
     
     const [allPosts, setAllPosts] = useState([]);
@@ -26,23 +25,23 @@ const Home = () => {
     }, [])
 
     return <div className="pagebody">
-        <Topbar pageName="Home" back={false} Hamicon="90%"/>
-            <div className="post_list">
-                {allPosts.map(o=>{
-                    return <Link to={
-                        { pathname: "/PostExpand", state:{o} }
-                        }>
-                        <Post
-                            img={o.image_url}
-                            userphoto={o.profile_photo}
-                            username={o.username}
-                            postdescription={o.description}
-                            date={o.created}
-                        />
-                        </Link>
-                })}
+                <Topbar pageName="Home" back={false} Hamicon="90%"/>
+                <div className="post_list">
+                    {allPosts.map(o=>{
+                        return <Link to={
+                                    { pathname: "/PostExpand", state:{o} }
+                                    }>
+                                <Post
+                                    img={o.image_url}
+                                    userphoto={o.profile_photo}
+                                    username={o.username}
+                                    postdescription={o.description}
+                                    date={o.created}
+                                />
+                            </Link>
+                    })}
+                </div>
             </div>
-        </div>
 }
 
 export default Home;

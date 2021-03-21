@@ -5,21 +5,8 @@ import Divider from 'comps/Divider';
 import Button from 'comps/Button';
 import axios from 'axios';
 import {useHistory} from 'react-router-dom';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
 
   const Login = () => {
-
-    /* 
-      Use an axios call to check if username and password exists in the db (SELECT)
-      Server will reutrn a token if it exists and store it in the storage
-      Connect token with axios header
-      Otherwise it will show error
-    */
 
     const [username, setUsername] = useState("");
     const [pass, setPass] = useState("");
@@ -41,10 +28,10 @@ import {
           username:username,
           password:pass
         });
+
         if (resp.data !== "Something went wrong") {
           const token = resp.data
           sessionStorage.setItem("token", token);
-          console.log(resp.data);
           axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
           history.push("/Home")
         }
@@ -55,22 +42,24 @@ import {
     }, [])
 
     return <div className="pagebody">
-            <div className="logo">
-              <Heading1 text="Let's Breaddit!"/>
+              <div className="logo">
+                <Heading1 text="Let's Breaddit!"/>
+              </div>
+
+              <div className="login_form">
+                  <Input placeholder="Username" catchInput={(e) => 
+                    setUsername(e.target.value)}
+                  />
+                  <Input placeholder="Password" type="password" catchInput={(e) => 
+                    setPass(e.target.value)}
+                  />
+                  <Button text="Log in" width="100%" onClick={Auth}/>
+              </div>
+              <div>
+                {error}
+              </div>
+              <Divider />
             </div>
-  
-          <div className="login_form">
-              <Input placeholder="Username" catchInput={(e) => 
-                setUsername(e.target.value)}/>
-              <Input placeholder="Password" type="password" catchInput={(e) => 
-                setPass(e.target.value)}/>
-              <Button text="Log in" width="100%" onClick={Auth}/>
-          </div>
-          <div>
-            {error}
-          </div>
-          <Divider />
-    </div>
   }
 
   export default Login;

@@ -11,7 +11,6 @@ import {
   Link
 } from "react-router-dom";
 
-
 const Feed = () => {
 
   const [user, setUser] = useState("");
@@ -21,7 +20,6 @@ const Feed = () => {
       let resp = await axios.get("/api/mypost");
       setMyposts(...[resp.data.id])
       console.log("response :", resp)
-      console.log(resp.data)
   }
 
   const CheckToken = async () => {
@@ -38,22 +36,25 @@ const Feed = () => {
   }, [])
 
 return <div className="pagebody">
+
         <Topbar pageName="My Feed" back={true} Hamicon="90%"/>
+
         <div className="userinfo">
           <Userpic userphoto={user.profile_photo}/>
           <Userinfo username={user.username} usertime={user.created}/>
         </div>
+        
         <div className="post_list">
             {myposts && myposts.map(o=>{
               return <Link to={{ pathname: "/PostExpand", state:{o} }}>
-                    <Post
-                      img={o.image_url}
-                      userphoto={o.profile_photo}
-                      username={o.username}
-                      postdescription={o.description}
-                      date={o.created}
-                    />
-                  </Link>
+                        <Post
+                          img={o.image_url}
+                          userphoto={o.profile_photo}
+                          username={o.username}
+                          postdescription={o.description}
+                          date={o.created}
+                        />
+                      </Link>
             })}
 
         </div>

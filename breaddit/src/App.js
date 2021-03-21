@@ -14,22 +14,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import * as network from 'network.js'
 
 function App() {
-  // const [user, setUser] = useState()
-
-  // const login = async ({username, password}) => {
-  //   const data = await network.login({username, password})
-  //   console.log(data)
-  //   setUser(data)
-  // }
-
-  // const signup = async ({username, password}) => {
-  //   const data = await network.signup({username, password})
-  //   console.log(data)
-  //   setUser(data)
-  // }
 
   return (
     <Router>
@@ -60,15 +46,6 @@ function App() {
           <Route exact path='/SavedList'>
             <SavedList />
           </Route>
-
-          {/* <Route path='/Login' exact component={Login}/>
-          <Route path='/Main' exact component={Main}/>
-          <Route path='/Login' exact component={Login}/>
-          <Route path='/SignUp' exact component={SignUp}/>
-          <Route path='/feed' exact component={Feed}/>
-          <Route path='/PostExpand' exact component={PostExpand}/>
-          <Route path='/CreatePost' exact component={CreatePost}/>
-          <Route path='/SavedList' exact component={SavedList}/> */}
         </Switch>
       </div>
      </Router>
