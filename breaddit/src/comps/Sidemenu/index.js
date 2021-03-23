@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {Link} from "react-router-dom";
 import {useHistory} from 'react-router-dom';
 import Button from "comps/Button";
-
+import axios from 'axios';
 
 const SideMenuContainer = styled.div`
     width:200px;
@@ -116,7 +116,12 @@ const Sidemenu = ({onClick, username, date, userphoto}) => {
                     history.push("/CreatePost");
                 }} />
             </ButtonWrapper>
-                <Button width ="90%" text="Sign Out" bgcolor="black" />
+                <Button width ="90%" text="Log Out" bgcolor="black" onClick={()=>{
+                    sessionStorage.clear();
+                    axios.defaults.headers.common['Authorization'] = null;
+                    alert("You have been successfully logged out :3")
+                    history.push("/Login")
+                }}/>
         </ButtonContainer>
         
     </SideMenuContainer>
