@@ -5,53 +5,75 @@ import Comment from 'comps/Comment';
 import CommInput from 'comps/CommInput';
 import axios from 'axios';
 import {Link, useLocation} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
-  const PostExpand = () => {
-    const [comments, setComments] = useState([]);
-    const [newComment, setNewcomment] = useState("");
-    const [user, setUser] = useState("");
+const PostExpand = () => {
 
-    const HandleComments = async() => {
-      let resp = await axios.get(`/api/comments/${location.state.o.id}`);
-      setComments(...[resp.data])
-      console.log("Post id and Comments", comments)
-  }
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewcomment] = useState("");
+  const [user, setUser] = useState("");
+  
+  const history = useHistory();
 
-  const LeaveComment = async() => {
-    let resp = await axios.post(`/api/comments/${location.state.o.id}`, {
-      comment_text : newComment
-    });
-    console.log(resp.data)
-    HandleComments()
-  }
-
-  const CheckToken = async () => {
-    const resp = await axios.post("/api/verify");
-    console.log(resp.data);
-    if(resp.data !== "no token sent to server" || "Invalid Token") {
-        setUser(resp.data)
-    }
+  const HandleComments = async() => {
+    let resp = await axios.get(`/api/comments/${detail.id}`);
+    setComments(...[resp.data])
+    console.log("Post id and Comments", comments)
 }
 
-  useEffect(()=> {
-      HandleComments();
-      CheckToken();
-  }, [])
+const LeaveComment = async() => {
+  let resp = await axios.post(`/api/comments/${detail.id}`, {
+    comment_text : newComment
+  });
+  console.log(resp.data)
+  HandleComments()
+}
 
-  let location = useLocation();
+const CheckToken = async () => {
+  const resp = await axios.post("/api/verify");
+  console.log(resp.data);
+  if(resp.data !== "no token sent to server" || "Invalid Token") {
+      setUser(resp.data)
+  }
+}
+
+useEffect(()=> {
+    HandleComments();
+    CheckToken();
+}, [])
+
+let location = useLocation();
+
+var detail = location.state.o;
+const [id, setId] = useState(detail.id)
+
+const HandleDelete = async(id) => {
+  let resp = await axios.delete(`/api/posts/${id}`);
+  console.log(resp);
+  history.push("/Feed")
+}
 
 return <div className="post-expand">
           <Topbar pageName=" " back={true} Hamicon="90%"/>
 
           <div className="post-detail">
-            
+            <div className="delete">
+              {user.userId === detail.writer_id ?
+                <button onClick={()=>
+                  HandleDelete(id)
+                }
+                >Delete</button>
+                :
+                ""  
+              }
+            </div>
             <Post 
               bgColor={false}
-              userphoto={location.state.o.profile_photo}
-              img={location.state.o.image_url}
-              username={location.state.o.username}
-              postdescription={location.state.o.description}
-              date={location.state.o.created}
+              userphoto={detail.profile_photo}
+              img={detail.image_url}
+              username={detail.username}
+              postdescription={detail.description}
+              date={detail.created}
               display={false}
               />
               
