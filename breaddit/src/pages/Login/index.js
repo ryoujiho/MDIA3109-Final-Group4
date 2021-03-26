@@ -43,6 +43,7 @@ import {useHistory} from 'react-router-dom';
 
     return <div className="pagebody">
               <div className="logo">
+                <img src="/Breaddit.png"/>
                 <Heading1 text="Let's Breaddit!"/>
               </div>
 
