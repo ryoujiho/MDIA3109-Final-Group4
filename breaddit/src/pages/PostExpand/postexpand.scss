@@ -25,11 +25,17 @@
 }
 
 .delete {
-    width:100%;
+    width:85%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 
     button {
         width:100%;
         background:none;
         border:none;
+        background-color:#F4AC45;
+        padding:8px 0px;
+        font-family: 'Lato', sans-serif;
     }
 }

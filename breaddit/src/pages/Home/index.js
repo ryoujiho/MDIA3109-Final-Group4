@@ -30,7 +30,10 @@ const Home = () => {
                     {allPosts.map(o=>{
                         return <Link to={
                                     { pathname: "/PostExpand", state:{o} }
-                                    }>
+                                    }
+                                    onClick={()=>{
+                                        window.scrollTo(0, 0);
+                                    }}>
                                 <Post
                                     img={o.image_url}
                                     userphoto={o.profile_photo}
