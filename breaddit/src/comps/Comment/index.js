@@ -24,7 +24,6 @@ const WriterPhoto = styled.div`
     width:35px;
     height:35px;
     border-radius:50px;
-    border:4px solid #92BFB1;
     img {
         width:100%;
         height:100%;

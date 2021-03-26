@@ -35,7 +35,8 @@ const SignUp = () => {
               history.push("/Login")}}
             />
 
-            <div className="logo">
+            <div className="logo_signup">
+            <img src="/Breaddit.png"/>
               <Heading1 text="Bread Up!"/>
             </div>
 
