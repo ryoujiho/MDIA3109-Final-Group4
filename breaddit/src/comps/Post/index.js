@@ -67,24 +67,7 @@ const PostCreated = styled.div`
     opacity:0.5;
     margin:5px 0px;
 `;
-
-const Numbers = styled.div`
-    display:flex;
-    align-items:center;
-    width:auto;
-    margin:8px 0px;
-    img {
-        width:18px;
-        height:100%;
-        margin-right:6px;
-    }
-
-    span {
-        margin-right:18px;
-        font-size:12px;
-    }
-    
-`;
+ 
 
 const ViewComm = styled.span`
     display: ${props =>props.display ? props.display : 'none'};
@@ -104,10 +87,6 @@ const Post = ({bgColor, img, userphoto, username, postdescription, date, comment
                 </UserInfo>
                 <PostDesc>{postdescription}</PostDesc>
                 <PostCreated>{date}</PostCreated>
-                <Numbers>
-                    <img src="Crumble_sample.png"/>
-                    <span>Crumbles</span>
-                </Numbers>
                 <ViewComm display={display}>View all Comments</ViewComm>
             </PostDetailBox>
     </PostWrapper>

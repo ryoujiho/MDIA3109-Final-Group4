@@ -9,10 +9,6 @@ const SideMenuContainer = styled.div`
     width:200px;
     height:100%;
     background-color:#92BFB1;
-    a, a:visited {
-        text-decoration:none;
-        color:#0b0b09;
-    }
 `;
 
 // User Icon, Username and Date

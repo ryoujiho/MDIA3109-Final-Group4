@@ -29,6 +29,7 @@ const LeaveComment = async() => {
   HandleComments()
 }
 
+
 const CheckToken = async () => {
   const resp = await axios.post("/api/verify");
   console.log(resp.data);
@@ -59,7 +60,7 @@ return <div className="post-expand">
           <div className="post-detail">
             <div className="delete">
               {user.userId === detail.writer_id ?
-                <button onClick={()=>
+                <button className="delete-btn" onClick={()=>
                   HandleDelete(id)
                 }
                 >Delete</button>
